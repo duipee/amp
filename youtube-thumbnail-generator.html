@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Youtube Thumbnail Generator - by kompiajaib</title>
+<link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/KompiAjaib/ytg/master/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/KompiAjaib/ytg/master/css/style.css">
+</head>
+<body>
+<div id="page_content">
+<h1>Youtube Thumbnail Generator</h1>
+<p>By <a href="http://www.kompiajaib.com/" title="Kompi Ajaib">KompiAjaib</a></p>
+  <form>
+    <div class="form-group">
+        <label for="videoID" class="example">Youtube Video ID example: <span class="ex-text">https://www.youtube.com/watch?v=</span><b>anMYu17aZT4</b></label>
+        <input type="text" class="form-control" id="videoID" placeholder="Put Youtube Video ID Here" />
+    </div>
+</form>
+    <div class="get">
+<button class="btn btn-primary" id="get-button" type="submit" onclick='getThumbs()'>Get Thumbnail</button>
+            </div>
+<div id="container">
+    <button type="button" class="btn btn-danger" onClick="window.location.href=window.location.href">Get Another Thumbnail</button>
+<div id="thumbnail_container"></div>
+
+</div>
+<div class="footer">
+Credit to <a href="https://www.binarymoon.co.uk/" target="_blank" rel="nofollow">Binary Moon</a>
+</div>
+</div>
+<script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js'></script>
+<script type='text/javascript' src='https://cdn.rawgit.com/KompiAjaib/ytg/master/js/ytg-script.js'></script>
+</body>
+</html>
