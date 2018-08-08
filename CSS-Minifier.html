@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html">
+  <title>CSS Minifier</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+<style scoped="" type="text/css">
+#outer-wrapper {margin:0 auto;text-align:left;float:none;background-position:center!important;}
+#post-wrapper {width:100%;max-width:100%;margin:0 auto;text-align:left;float:none;background-position:center!important;}
+.post-body,.post{background-position:center!important;}
+.post-body p{margin:0}
+#blog1,#artikel,.blog-posts{background-position:center!important;}
+#comments,#sidebar-wrapper,#menu-wrap {display:none;margin-top:0;margin:0;}
+#main-wrapper{padding:0;width:100%;border:0}
+#cssminifier{background:#ecf0f1;position:relative;display:block;clear:both;border-radius:5px;padding:20px}
+#cssminifier textarea{width:100%;height:240px;margin:0 auto;display:block;background-color:#fff;padding:20px;font-family:Monospace;font-size:13px;border:0;border-radius:5px 5px 0 0;resize:none;box-shadow:inset 0 3px #cdd1d2}
+textarea:focus{background-color:#fff;color:#303030}
+#cssminifier .box{margin:10px auto 30px;color:#fff;font-size:90%}
+#cssminifier .box p{margin:0 0 2px}
+#cssminifier button{cursor:pointer;}
+#cssminifier .col{width:48%;margin:0 auto 30px}
+#cssminifier .left{float:left;margin-left:1%}
+#cssminifier .right{float:right;margin-right:1%}
+#cssminifier .button-group{float:none;background:#4d6a79;text-align:center;padding:20px 20px 40px 20px;margin:0;border-radius:0 0 5px 5px}
+#cssminifier button,#cssminifier button[disabled]:active{background:rgba(255,255,255,.3);text-align:center;color:#fff;display:inline-block;padding:8px 16px;font-size:13px;font-weight:400;line-height:1.471;border-radius:99em;margin:0 5px;border:0;box-shadow:0 2px 3px rgba(0,0,0,0.06),0 2px 3px rgba(0,0,0,0.1);transition:all .3s}
+#cssminifier button:hover,#cssminifier button:active{background:rgba(255,255,255,.5);color:#fff;box-shadow:0 10px 21px rgba(0,0,0,0.15),0 6px 6px rgba(0,0,0,0.12)}
+#cssminifier button[disabled],#cssminifier button[disabled]:active{background:rgba(255,255,255,.5);color:#fff;box-shadow:0 10px 21px rgba(0,0,0,0.15),0 6px 6px rgba(0,0,0,0.12)}
+#cssminifier .opt1,#cssminifier .opt2,#cssminifier .opt3,#cssminifier .opt4,#cssminifier .opt5{display:inline-block;margin:0 3px 0 10px;vertical-align:middle;border:none;outline:none}
+#cssminifier br{display:none}
+.option-input{-webkit-appearance:none;-moz-appearance:none;-ms-appearance:none;-o-appearance:none;appearance:none;position:relative;right:0;bottom:0;left:0;height:16px;width:16px;transition:all 0.15s ease-out 0s;background:rgba(255,255,255,.3);border:0;color:#fff;cursor:pointer;display:inline-block;margin-right:0.5rem;outline:none;position:relative;border-radius:99em}
+.option-input:hover{background:rgba(255,255,255,.3)}
+.option-input:checked{background:rgba(0,0,0,.2);animation:rubberBand 1s}
+.option-input:checked::before{height:16px;width:16px;position:absolute;content:'\f00c';font-family:fontawesome;display:inline-block;font-size:12.66667px;text-align:center;line-height:16px}
+.option-input:checked::after{-webkit-animation:click-wave 0.65s;-moz-animation:click-wave 0.65s;animation:click-wave 0.65s;background:#40e0d0;content:'';display:block;position:relative;z-index:100}
+.option-input.radio{border-radius:50%}
+.option-input.radio::after{border-radius:50%}
+</style>
+</head>
+
+<body>
+<textarea autofocus="" id="cssField" placeholder="Paste your CSS code here..." spellcheck="false"></textarea><br />
+<div class="button-group"><div class="box"><input class="option-input checkbox opt1" id="stripAllComment" type="checkbox" /> <br />
+<label for="stripAllComment">Strip all comments</label><br />
+<input class="option-input checkbox opt2" id="superCompact" type="checkbox" /> <br />
+<label for="superCompact">Super compact</label><br />
+<input class="option-input checkbox opt3" id="betterIndentation" type="checkbox" /> <br />
+<label for="betterIndentation">Keep indentation</label><br />
+<input checked="" class="option-input checkbox opt4" id="keepLastComma" type="checkbox" /> <br />
+<label for="keepLastComma">Remove the last semicolon</label></div><button class="ripplelink" onclick="compressCSS(&quot;cssField&quot;);">Compress CSS</button><br />
+<button class="ripplelink" onclick="clearField(&quot;cssField&quot;);">Clear Field</button> <br />
+<button class="ripplelink" onclick="selectAll(&quot;cssField&quot;);">Select All</button></div><div class="clear"></div><script type="text/javascript">
+function get(e){return document.getElementById(e)}function highlightCode(e){if(hc.checked){var a=e.innerHTML;a=a.replace(/\{([\s\S]+?)\}/g,function(e){return e.replace(/\'(.*?)\'/g,"<span class='st'>'$1'</span>").replace(/\"(.*?)\"/g,"<span class='st'>\"$1\"</span>").replace(/(\{|\n|;)?(.[^\{]*?):(.[^\{]*?)(;|\})/g,"$1<span class='pr'>$2</span>:<span class='vl'>$3</span>$4").replace(/<span class='pr'>\{/g,"{<span class='pr'>")}),a=a.replace(/&lt;(.*?)('|")(.*?)('|")&gt;/g,function(e){return e.replace(/'(.*?)'/g,"<span class='vl'>'$1'</span>").replace(/"(.*?)"/g,"<span class='vl'>\"$1\"</span>")}),a=a.replace(/\{([\s\S]+?)\}/g,function(e){return e.replace(/([\(\)\{\}\[\]\:\;\,]+)/g,"<span class='pn'>$1</span>").replace(/\!important/gi,"<span class='im'>!important</span>")}),a=a.replace(/\/\*([\w\W]+?)\*\//gm,"<span class='cm'>/*$1*/</span>"),e.innerHTML="<code>"+a+"</code>",hr.style.display="block",rt.style.display="block"}else hr.style.display="none",rt.style.display="none"}function compressCSS(e){var a=get(e),c=/@(media|-w|-m|-o|keyframes|page)(.*?)\{([\s\S]+?)?\}\}/gi,n=a.value,t=n.length;n=sa.checked||sc.checked?n.replace(/\/\*[\w\W]*?\*\//gm,""):n.replace(/(\n+)?(\/\*[\w\W]*?\*\/)(\n+)?/gm,"\n$2\n"),n=n.replace(/([\n\r\t\s ]+)?([\,\:\;\{\}]+?)([\n\r\t\s ]+)?/g,"$2"),n=sc.checked?n:n.replace(/\}(?!\})/g,"}\n"),n=bi.checked?n.replace(c,function(e){return e.replace(/\n+/g,"\n  ")}):n.replace(c,function(e){return e.replace(/\n+/g,"")}),n=bi.checked&&!sc.checked?n.replace(/\}\}/g,"}\n}"):n,n=bi.checked&&!sc.checked?n.replace(/@(media|-w|-m|-o|keyframes)(.*?)\{/g,"@$1$2{\n  "):n,n=cm.checked?n.replace(/;\}/g,"}"):n.replace(/\}/g,";}").replace(/;+\}/g,";}").replace(/\};\}/g,"}}"),n=n.replace(/\:0(px|em|pt)/gi,":0"),n=n.replace(/ 0(px|em|pt)/gi," 0"),n=n.replace(/\s+\!important/gi,"!important"),n=n.replace(/(^\n+|\n+$)/,""),a.value=n,hr.innerHTML="/* "+(t-n.length)+" of "+t+" unused characters has been removed. */\n"+n.replace(/</g,"&lt;").replace(/>/g,"&gt;"),highlightCode(hr)}function clearField(e){var a=get(e);a.value="",a.focus()}function selectAll(e){get(e).focus(),get(e).select()}var hc=get("highlightCode"),sa=get("stripAllComment"),sc=get("superCompact"),cm=get("keepLastComma"),bi=get("betterIndentation"),bs=get("breakSelector"),tt=get("toTab"),to=get("tabOpt").getElementsByTagName("input"),sb=get("spaceBetween"),ip=get("inlineSingleProp"),rs=get("removeLastSemicolon"),il=get("inlineLayout"),si=get("singleBreak"),hr=get("highlightedResult"),rt=document.getElementsByTagName("h2")[1];
+</script>
+
+</body>
+</html>
