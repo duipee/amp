@@ -3,23 +3,17 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="Content-Type" content="text/html">
-  <title>Color Picker Input with jQuery - Template Monster</title>
-  <meta name="author" content="Jake Rocheleau">
+  <title>Color Picker Input with jQuery - bootstrap</title>
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
-  <link rel="shortcut icon" href="http://www.templatemonster.com/favicon.ico">
-  <link rel="icon" href="http://www.templatemonster.com/favicon.ico">
   <link rel="stylesheet" type="text/css" media="all" href="https://cdn.rawgit.com/duipee/css/98b045e4/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" media="all" href="https://cdn.rawgit.com/duipee/css/56f75647/jquery.minicolors.css">
+  <link rel="stylesheet" type="text/css" media="all" href="https://www.templatemonster.com/blog/wp-content/uploads/2014/02/demo/css/jquery.minicolors.css">
   <script type="text/javascript" src="https://cdn.rawgit.com/duipee/js/2351b003/jquery-1.10.2.min.js"></script>
   <script type="text/javascript" src="https://cdn.rawgit.com/duipee/js/2351b003/jquery.minicolors.min.js"></script>
 </head>
 
 <body>
   <div class="container">
-    <h1>Simple Color Picker Input</h1>
-    <p class="lead">MiniColors is a free jQuery plugin to create color picker input fields. This demo includes Bootstrap styles which can be tied into the plugin.</p>
-    
-    <h3></h3>
+
     <div class="well">
       <div class="row">
 			  <div class="col-md-5">
@@ -48,6 +42,57 @@
 			  </div>
 
 		  </div><!-- @end .row -->
+    </div><!-- @end .well -->
+    
+    <h3>Inline Color Picker</h3>
+    <div class="well">
+      <div class="row">
+     	  <div class="col-md-3">
+			    <div class="form-group">
+					  <input type="text" id="inlinecolors" class="form-control" data-inline="true" value="#4fc8db">
+				  </div>
+			  </div>
+			  
+			  <div id="inlinecolorhex" class="col-md-8">
+			    <h3>Current selection: <small>#4fc8db</small></h3>
+			  </div>
+      </div><!-- @end .row -->
+    </div><!-- @end .well -->
+  </div><!-- @end .container -->
+<script type="text/javascript">
+$(function(){
+  var colpick = $('.demo').each( function() {
+    $(this).minicolors({
+      control: $(this).attr('data-control') || 'hue',
+      inline: $(this).attr('data-inline') === 'true',
+      letterCase: 'lowercase',
+      opacity: false,
+      change: function(hex, opacity) {
+        if(!hex) return;
+        if(opacity) hex += ', ' + opacity;
+        try {
+          console.log(hex);
+        } catch(e) {}
+        $(this).select();
+      },
+      theme: 'bootstrap'
+    });
+  });
+  
+  var $inlinehex = $('#inlinecolorhex h3 small');
+  $('#inlinecolors').minicolors({
+    inline: true,
+    theme: 'bootstrap',
+    change: function(hex) {
+      if(!hex) return;
+      $inlinehex.html(hex);
+    }
+  });
+});
+</script>
+</body>
+</html>
+
     </div><!-- @end .well -->
     
     <h3>Inline Color Picker</h3>
