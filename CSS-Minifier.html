@@ -5,14 +5,13 @@
   <meta http-equiv="Content-Type" content="text/html">
   <title>CSS Minifier</title>
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<style scoped="" type="text/css">
-#outer-wrapper {margin:0 auto;text-align:left;float:none;background-position:center!important;}
-#post-wrapper {width:100%;max-width:100%;margin:0 auto;text-align:left;float:none;background-position:center!important;}
-.post-body,.post{background-position:center!important;}
-.post-body p{margin:0}
-#blog1,#artikel,.blog-posts{background-position:center!important;}
-#comments,#sidebar-wrapper,#menu-wrap {display:none;margin-top:0;margin:0;}
-#main-wrapper{padding:0;width:100%;border:0}
+<style type="text/css">
+  body {
+  background-color:transparent;
+  margin:0;
+  padding:0;
+}
+
 #cssminifier{background:#ecf0f1;position:relative;display:block;clear:both;border-radius:5px;padding:20px}
 #cssminifier textarea{width:100%;height:240px;margin:0 auto;display:block;background-color:#fff;padding:20px;font-family:Monospace;font-size:13px;border:0;border-radius:5px 5px 0 0;resize:none;box-shadow:inset 0 3px #cdd1d2}
 textarea:focus{background-color:#fff;color:#303030}
@@ -49,7 +48,9 @@ textarea:focus{background-color:#fff;color:#303030}
 <input checked="" class="option-input checkbox opt4" id="keepLastComma" type="checkbox" /> <br />
 <label for="keepLastComma">Remove the last semicolon</label></div><button class="ripplelink" onclick="compressCSS(&quot;cssField&quot;);">Compress CSS</button><br />
 <button class="ripplelink" onclick="clearField(&quot;cssField&quot;);">Clear Field</button> <br />
-<button class="ripplelink" onclick="selectAll(&quot;cssField&quot;);">Select All</button></div><div class="clear"></div><script type="text/javascript">
+<button class="ripplelink" onclick="selectAll(&quot;cssField&quot;);">Select All</button></div><div class="clear"></div>
+  
+  <script type="text/javascript">
 function get(e){return document.getElementById(e)}function highlightCode(e){if(hc.checked){var a=e.innerHTML;a=a.replace(/\{([\s\S]+?)\}/g,function(e){return e.replace(/\'(.*?)\'/g,"<span class='st'>'$1'</span>").replace(/\"(.*?)\"/g,"<span class='st'>\"$1\"</span>").replace(/(\{|\n|;)?(.[^\{]*?):(.[^\{]*?)(;|\})/g,"$1<span class='pr'>$2</span>:<span class='vl'>$3</span>$4").replace(/<span class='pr'>\{/g,"{<span class='pr'>")}),a=a.replace(/&lt;(.*?)('|")(.*?)('|")&gt;/g,function(e){return e.replace(/'(.*?)'/g,"<span class='vl'>'$1'</span>").replace(/"(.*?)"/g,"<span class='vl'>\"$1\"</span>")}),a=a.replace(/\{([\s\S]+?)\}/g,function(e){return e.replace(/([\(\)\{\}\[\]\:\;\,]+)/g,"<span class='pn'>$1</span>").replace(/\!important/gi,"<span class='im'>!important</span>")}),a=a.replace(/\/\*([\w\W]+?)\*\//gm,"<span class='cm'>/*$1*/</span>"),e.innerHTML="<code>"+a+"</code>",hr.style.display="block",rt.style.display="block"}else hr.style.display="none",rt.style.display="none"}function compressCSS(e){var a=get(e),c=/@(media|-w|-m|-o|keyframes|page)(.*?)\{([\s\S]+?)?\}\}/gi,n=a.value,t=n.length;n=sa.checked||sc.checked?n.replace(/\/\*[\w\W]*?\*\//gm,""):n.replace(/(\n+)?(\/\*[\w\W]*?\*\/)(\n+)?/gm,"\n$2\n"),n=n.replace(/([\n\r\t\s ]+)?([\,\:\;\{\}]+?)([\n\r\t\s ]+)?/g,"$2"),n=sc.checked?n:n.replace(/\}(?!\})/g,"}\n"),n=bi.checked?n.replace(c,function(e){return e.replace(/\n+/g,"\n  ")}):n.replace(c,function(e){return e.replace(/\n+/g,"")}),n=bi.checked&&!sc.checked?n.replace(/\}\}/g,"}\n}"):n,n=bi.checked&&!sc.checked?n.replace(/@(media|-w|-m|-o|keyframes)(.*?)\{/g,"@$1$2{\n  "):n,n=cm.checked?n.replace(/;\}/g,"}"):n.replace(/\}/g,";}").replace(/;+\}/g,";}").replace(/\};\}/g,"}}"),n=n.replace(/\:0(px|em|pt)/gi,":0"),n=n.replace(/ 0(px|em|pt)/gi," 0"),n=n.replace(/\s+\!important/gi,"!important"),n=n.replace(/(^\n+|\n+$)/,""),a.value=n,hr.innerHTML="/* "+(t-n.length)+" of "+t+" unused characters has been removed. */\n"+n.replace(/</g,"&lt;").replace(/>/g,"&gt;"),highlightCode(hr)}function clearField(e){var a=get(e);a.value="",a.focus()}function selectAll(e){get(e).focus(),get(e).select()}var hc=get("highlightCode"),sa=get("stripAllComment"),sc=get("superCompact"),cm=get("keepLastComma"),bi=get("betterIndentation"),bs=get("breakSelector"),tt=get("toTab"),to=get("tabOpt").getElementsByTagName("input"),sb=get("spaceBetween"),ip=get("inlineSingleProp"),rs=get("removeLastSemicolon"),il=get("inlineLayout"),si=get("singleBreak"),hr=get("highlightedResult"),rt=document.getElementsByTagName("h2")[1];
 </script>
 
