@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta name="robots" content="noindex,nofollow">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <title></title>
+    <title>amp validator</title>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="https://cdn.rawgit.com/duipee/css/07cb2bd5/font-awesome-animation.min.css">
@@ -235,36 +234,5 @@
 	  $('[data-toggle="tooltip"]').tooltip()
 	})	
 	</script>
-	
-	  
-	  
-	  <script type="text/javascript" src="https://technicalseo.com/resources/tools/iframeResizer.min.js"></script> 
-<script type="text/javascript">
- iFrameResize({
-  log                     : true,                  // Enable console logging
-  enablePublicMethods     : true,                  // Enable methods within iframe hosted page
-  resizedCallback         : function(messageData){ // Callback fn when resize is received
-   $('p#callback').html(
-    '<b>Frame ID:</b> '    + messageData.iframe.id +
-    ' <b>Height:</b> '     + messageData.height +
-    ' <b>Width:</b> '      + messageData.width + 
-    ' <b>Event type:</b> ' + messageData.type
-   );
-  },
-  messageCallback         : function(messageData){ // Callback fn when message is received
-   $('p#callback').html(
-    '<b>Frame ID:</b> '    + messageData.iframe.id +
-    ' <b>Message:</b> '    + messageData.message
-   );
-   alert(messageData.message);
-  },
-  closedCallback         : function(id){ // Callback fn when iFrame is closed
-   $('p#callback').html(
-    '<b>IFrame (</b>'    + id +
-    '<b>) removed from page.</b>'
-   );
-  }
- });
-</script>
   </body>
 </html>
