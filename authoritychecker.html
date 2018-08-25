@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+<title>Domain & Page Authority Checker</title>
+
+    <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+<meta name="googlebot" content="noindex">   
+
+
+<meta name="Robots" content="INDEX, FOLLOW">
+<meta name="YahooSeeker" content="INDEX, FOLLOW">
+<meta name="msnbot" content="INDEX, FOLLOW">
+<meta name="googlebot" content="index, follow">
+
+
+<meta name="Language" content="English">
+<meta name="Publisher" content="PrePost SEO">
+<meta name="Revisit-After" content="7 Days">
+<meta name="distribution" content="LOCAL">
+<meta name="page-topic" content="PrePost SEO ">
+<meta name="Rating" content="General">
+<meta name="allow-search" content="yes">
+<meta name="googlebot" content="noodp">
+<meta name="slurp" content="noydir">
+
+<!-- Bootstrap -->
+<link href="https://www.prepostseo.com/imgs/icon-2.png" rel="icon" type="image/x-icon" />
+<link href="//stackpath.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="//stackpath.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> 
+<link href="https://www.prepostseo.com/assets/pps-frontend/lib/theme.css" rel="stylesheet">
+
+<script type="text/javascript">
+function validateURL(textval) {
+     regexp =  /^(?:(?:https?|ftp):\/\/)(?:(?!(?:10|127)(?:\.\d{1,3}){3})(?!(?:169\.254|192\.168)(?:\.\d{1,3}){2})(?!172\.(?:1[6-9]|2\d|3[0-1])(?:\.\d{1,3}){2})(?:[1-9]\d?|1\d\d|2[01]\d|22[0-3])(?:\.(?:1?\d{1,2}|2[0-4]\d|25[0-5])){2}(?:\.(?:[1-9]\d?|1\d\d|2[0-4]\d|25[0-4]))|(?:(?:[a-z\u00a1-\uffff0-9]-*)*[a-z\u00a1-\uffff0-9]+)(?:\.(?:[a-z\u00a1-\uffff0-9]-*)*[a-z\u00a1-\uffff0-9]+)*(?:\.(?:[a-z\u00a1-\uffff]{2,})))(?::\d{2,5})?(?:\/\S*)?$/;
+        if (regexp.test(textval)){
+          return true;
+        }
+        else
+        {
+          return false;
+        }
+}
+function escapeHtml(text) {
+	  var map = {'&':'&amp;','<': '&lt;','>': '&gt;','"': '&quot;',"'": '&#039;'};return text.replace(/[&<>"']/g, function(m) { return map[m]; });}
+</script>
+
+
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-7155931151667823",
+          enable_page_level_ads: true
+     });
+</script>
+
+
+</head>
+<body style="background:#FFFFFF;">
+<div class="fw">
+	<!-- Model -->
+    <div class="model-bg"></div>
+
+	<div class="model-box">
+    	<span class="model-heading">Model Heading</span>
+        <div class="line"></div>
+        <div class="model-body">
+        	
+            
+        </div>
+        <div class="line"></div>
+        <div class="model-footer">
+        	<span class="btn btn-danger pull-right close-model">Close Model</span>
+        </div>
+    </div>
+
+<script>
+$(".model-bg").click(function(){
+	$(".model-box").hide();
+	$(this).fadeOut(800);
+});
+$(".close-model").click(function(){
+	$(".model-box").hide();
+	$(".model-bg").fadeOut(800);
+});
+
+function showModel(title, data)
+{
+	$(".model-heading").html(title);
+	$(".model-body").html(data);
+	$(".model-box").fadeIn(500);
+	$(".model-bg").show();
+}
+
+</script>	
+    <!-- ./Model -->
+
+	
+    
+    
+    
+    <!-- Main Site -->
+    
+
+
+
+<script>
+	$(".close-alert").click(function(){
+		var alertId = $(this).attr("alert-id");
+		$.ajax({
+			type: "post",
+			data : {"alertId" : alertId, "action" : "alertClose"},
+			url: "https://www.prepostseo.com/frontend/alertClose"
+		})
+	});
+	
+</script>    
+    
+    <!-- Main Site -->
+    <div class="container-fluid" style="padding:3px !important;">
+    	<div class="container  widget-width">
+        	<!-- Content Section -->
+            
+        	<div class="col-xs-12 form">
+                <div class="text-sec">
+					<div class="col-xs-12" style="margin:0 auto; float:none;">
+                        <div class="from-sec col-xs-12" style="min-height:50px; margin-bottom:0;">
+                            <p>
+                            	Enter Webpage url below to check Domain and Page Authority: 
+                            </p>
+                            <div class="form-group">
+                                <div class="input-group">
+                                  <div class="input-group-addon"><i class="glyphicon glyphicon-link"></i></div>
+                                  <input type="url" id="inputURL" name="url" required="true" placeholder="Website URL" class="form-control green-border" style="height:auto; padding:10px;" value="" />
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-center">
+                        	<span class="btn btn-lg btn-success active" id="checkBtn">Check Authority</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <!--./Content Section -->
+            
+            <!-- Result Section --->
+           <style>
+		   	#resultsTable tr td:first-child {
+				font-weight:700;
+			}
+			#resultsTable tr td:nth-child(2) {
+				text-align:center;
+			}
+		   </style>
+            <div class="plg-res" id="ressultSec" style="display:none; border:1px dashed #34a370;">
+				
+                <div class="col-sm-12 noP" >
+                	<table class="table table-bordered" id="resultsTable">
+						<tr>
+                        	<td width="40%" class="bg-warning">Webpage Url</td>
+                            <td width="60%" id="webUrl"></td>
+                        </tr>
+                        <tr>
+                        	<td class="bg-warning">Domain Authority</td>
+                            <td id="da" class="value"></td>
+                        </tr>
+                        <tr>
+                        	<td class="bg-warning">Page Authority</td>
+                            <td id="pa" class="value"></td>
+                        </tr>
+                        <tr>
+                        	<td class="bg-warning">Moz Rank</td>
+                            <td id="mr" class="value"></td>
+                        </tr>
+                        <tr>
+                        	<td class="bg-warning">Total Links</td>
+                            <td id="ip" class="value"></td>
+                        </tr>
+                        
+                        
+                    </table>
+                </div>
+                
+            </div>
+            <!-- ./Result Section --->
+            
+           
+            
+        </div>
+    </div>
+    <!-- ./Main Site -->
+
+<script>
+$(function(){	
+	var linkArr = new Array();
+	function stopActions()
+	{
+		$("#checkBtn").removeClass("active");
+	}
+	function escapeHtml(text) {
+	  var map = {
+		'&': '&amp;',
+		'<': '&lt;',
+		'>': '&gt;',
+		'"': '&quot;',
+		"'": '&#039;'
+	  };
+	
+	  return text.replace(/[&<>"']/g, function(m) { return map[m]; });
+	}
+	
+	function allowActions()
+	{
+		$("#checkBtn").addClass("active");
+	}
+	
+	$("#reportDownload").click(function(){
+		$("#detailForm").submit();
+	});
+	
+	$("#checkBtn").click(function()
+	{
+		if ($(this).hasClass("active"))
+		{
+			var linkval = $("#inputURL").val();
+			if(linkval.length < 10)
+			{
+				showModel("Error", "Please enter a valid url")
+			}
+			$("#webUrl").html(escapeHtml(linkval));
+			
+			$( "#resultsTable .value" ).html('<i class="fa fa-spinner fa-spin"></i>');
+			$(this).removeClass("active");
+			$("#ressultSec").slideDown();
+			
+			$.ajax({
+				url : "https://www.prepostseo.com/ajax/checkAuthority",
+				type:"post",
+				data: {url : linkval, widget : 1},
+				dataType:"json",
+				success: function(resp){
+					if(typeof resp.error != 'undefined')
+					{
+						showModel("Something Went Wrong", '<p class="text-center">We are Sorry you faced this, please click button below to check Domain Authority. <br> <a href="https://www.prepostseo.com/domain-authority-checker" class="btn btn-success btn-lg" target="_blank">Check Website Authority</a></p>');
+					} else {
+						
+						$( "#da" ).html(resp.data[0].domain_auth);
+						$( "#pa" ).html(resp.data[0].page_auth);
+						$( "#mr" ).html(resp.data[0].m_rank);
+						$( "#ip" ).html(resp.data[0].total_links);
+					}
+					
+					$("#checkBtn").addClass("active");
+				}
+			});
+			
+		}
+	});
+	
+	
+	
+});
+
+</script>
+
+    
+    <!-- ./Main Site -->
+    
+    <!-- Footer -->
+    
+    	<div class="container" style="display:none;">
+    <div class="col-sm-12 text-center" style="padding:10px 0px; ">
+        Tool Developed By <br>
+        <a href="https://www.prepostseo.com/" target="_blank"><img src="https://www.prepostseo.com/imgs/prepostseo.png" width="140" /></a>
+        
+    </div>
+    
+    
+</div>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-67516616-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+    <!-- ./Footer -->
+    
+</div>
+
+<script>
+	
+	$(function () {
+  		$('[data-toggle="tooltip"]').tooltip()
+	});
+	$(function() {  
+	
+		jQuery.scrollSpeed(100, 800);
+	
+	});
+	
+</script>
+  
+
+</body>
+</html>
