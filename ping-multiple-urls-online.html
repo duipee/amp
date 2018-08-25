@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+
+<title>Ping Website Tool / Google Indexer - Ping URLs to Search Engines</title>
+
+	<meta name="description" content="Bulk  Online Ping Website Tool helps you to ping URLs  and webpages to 60+ search engines. Best Online Google, Bing, Yahoo indexer Tool.">
+<!-- Bootstrap -->
+<link href="https://www.prepostseo.com/imgs/icon-2.png" rel="icon" type="image/x-icon" />
+<link href="//stackpath.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="//stackpath.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> 
+<link href="https://www.prepostseo.com/assets/pps-frontend/lib/theme.css" rel="stylesheet">
+
+<script type="text/javascript">
+function validateURL(textval) {
+     regexp =  /^(?:(?:https?|ftp):\/\/)(?:(?!(?:10|127)(?:\.\d{1,3}){3})(?!(?:169\.254|192\.168)(?:\.\d{1,3}){2})(?!172\.(?:1[6-9]|2\d|3[0-1])(?:\.\d{1,3}){2})(?:[1-9]\d?|1\d\d|2[01]\d|22[0-3])(?:\.(?:1?\d{1,2}|2[0-4]\d|25[0-5])){2}(?:\.(?:[1-9]\d?|1\d\d|2[0-4]\d|25[0-4]))|(?:(?:[a-z\u00a1-\uffff0-9]-*)*[a-z\u00a1-\uffff0-9]+)(?:\.(?:[a-z\u00a1-\uffff0-9]-*)*[a-z\u00a1-\uffff0-9]+)*(?:\.(?:[a-z\u00a1-\uffff]{2,})))(?::\d{2,5})?(?:\/\S*)?$/;
+        if (regexp.test(textval)){
+          return true;
+        }
+        else
+        {
+          return false;
+        }
+}
+function escapeHtml(text) {
+	  var map = {'&':'&amp;','<': '&lt;','>': '&gt;','"': '&quot;',"'": '&#039;'};return text.replace(/[&<>"']/g, function(m) { return map[m]; });}
+</script>
+
+</head>
+<body>
+
+                   <div class="col-xs-12 form">
+                <div class="text-sec">
+     <div class="col-sm-8" style="margin:0 auto; float:none;">
+                         <div class="from-sec col-sm-12" style="min-height:50px; margin-bottom:0;">
+                            <p>
+                             Select Category:
+                            </p>
+                            <div class="form-group bigInput-sec">
+                                <div class="input-group" style="width:100%;">
+                                  <select class="form-control green-border" style="height:auto;  padding:10px;" autocomplete="off" id="cat">
+                                   <option value="Art">Art</option>
+                                    <option value="Automotive">Automotive</option>
+                                    <option value="Business">Business</option>
+                                    <option value="Clothing & Accessories">Clothing & Accessories</option>
+                                    <option value="Computer & Electronics">Computer & Electronics</option>
+                                    <option value="Education">Education</option>
+                                    <option value="Entertainment">Entertainment</option>
+                                    <option value="Family">Family</option>
+                                    <option value="Financial Services">Financial Services</option>
+                                    <option value="Food & Drink">Food & Drink</option>
+                                    <option value="Free Services">Free Services</option>
+                                    <option value="Games & Toys">Games & Toys</option>
+                                    <option value="Gifts & Flowers">Gifts & Flowers</option>
+                                    <option value="Health & Beauty">Health & Beauty</option>
+                                    <option value="Hobbies & Collectibles">Hobbies & Collectibles</option>
+                                    <option value="Home & Garden">Home & Garden</option>
+                                    <option value="Information">Information</option>
+                                    <option value="Internet & Online">Internet & Online</option>
+                                    <option value="Marketing">Marketing</option>
+                                    <option value="Office">Office</option>
+                                    <option value="Other" selected="selected">Other</option>
+                                    <option value="Outdoors">Outdoors</option>
+                                    <option value="Photography">Photography</option>
+                                    <option value="Search Engine Optimization">Search Engine Optimization</option>
+                                    <option value="Shopping">Shopping</option>
+                                    <option value="Sports & Fitness">Sports & Fitness</option>
+                                    <option value="Telecommunications">Telecommunications</option>
+                                    <option value="Tips & Tricks">Tips & Tricks</option>
+                                    <option value="Travel">Travel</option>
+                                    <option value="Website Tools">Website Tools</option>
+                                  </select>
+                                </div>
+                            </div>
+                        </div>
+                        
+                         <div class="from-sec col-sm-12" style="min-height:50px; margin-bottom:0;">
+                            <p>
+                             Paste up to 10 urls to ping online:
+                            </p>
+                            <div class="form-group bigInput-sec">
+                                <div class="input-group">
+                                  <div class="input-group-addon"><i class="glyphicon glyphicon-link"></i></div>
+                                  <textarea placeholder="Webpages urls" class="form-control green-bdr" style="height:200px;" id="urls" name="urls"></textarea>
+                                </div>
+                            </div>
+                        </div>
+
+                      
+                        <div class="com-md-12 text-center">
+                         <span style="width:100%;font-size:12px;"  class="text-uppercase text-muted">Advertisement</span>
+       
+<div class="col-xs-12 text-center" style="margin-top:10px;">
+GOOGLE ADS
+
+
+
+
+
+
+</div>
+                        </div>
+                        
+                        <p class="text-center">
+                         <span class="btn btn-lg btn-success active" style="margin:20px 0;" id="checkBtn">Ping Now</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+
+          
+            <style>
+    #resultsTable th {
+     text-align:center;
+    }
+    #resultsTable td {
+     text-align:center;
+    }
+    #resultsTable td:first-child 
+    {
+     text-align:left;
+    }
+    .pingBox {
+     width:100%;
+     height:150px;
+     border:1px solid #B4B4B4;
+     background:#FDFCF3;
+     text-align:left;
+     overflow:scroll;
+     padding:5px;
+    }
+   </style>
+            
+            <!-- Result Section --->
+            <div class="plg-res" id="ressultSec" style="display:none;">
+    <span class="sub-heading feature-tab">Results:</span>
+                <span class="line"></span>
+                <div class="col-sm-12 noP" >
+                 <table class="table table-bordered" id="resultsTable">
+      <thead>
+                        <tr>
+                         <th width="40%">
+                             Web Page
+                            </th>
+                            <th width="60%">
+                             Ping Status
+                            </th>
+                            
+                        </tr>
+                        </thead>
+                        <tbody>
+                        
+                        </tbody>
+                    </table>
+                </div>
+                
+            </div>
+  <!-- ./Result Section --->
+
+<script>
+$(function(){ 
+ var linkno = 0;
+ var title = 'No title';
+ var category = '';
+ var linkArr = new Array();
+ var pingArr = new Array(
+  "blogsearch.google.ae/ping/RPC2",
+  "blogsearch.google.at/ping/RPC2",
+  "blogsearch.google.be/ping/RPC2",
+  "blogsearch.google.bg/ping/RPC2",
+  "blogsearch.google.ca/ping/RPC2",
+  "blogsearch.google.ch/ping/RPC2",
+  "blogsearch.google.cl/ping/RPC2",
+  "blogsearch.google.co.cr/ping/RPC2",
+  "blogsearch.google.co.hu/ping/RPC2",
+  "blogsearch.google.co.id/ping/RPC2",
+  "blogsearch.google.co.il/ping/RPC2",
+  "blogsearch.google.co.in/ping/RPC2",
+  "blogsearch.google.co.jp/ping/RPC2",
+  "blogsearch.google.co.ma/ping/RPC2",
+  "blogsearch.google.co.nz/ping/RPC2",
+  "blogsearch.google.co.th/ping/RPC2",
+  "blogsearch.google.co.uk/ping/RPC2",
+  "blogsearch.google.co.ve/ping/RPC2",
+  "blogsearch.google.co.za/ping/RPC2",
+  "blogsearch.google.com.ar/ping/RPC2",
+  "blogsearch.google.com.au/ping/RPC2",
+  "blogsearch.google.com.br/ping/RPC2",
+  "blogsearch.google.com.co/ping/RPC2",
+  "blogsearch.google.com.do/ping/RPC2",
+  "blogsearch.google.com.mx/ping/RPC2",
+  "blogsearch.google.com.my/ping/RPC2",
+  "blogsearch.google.com.pe/ping/RPC2",
+  "blogsearch.google.com.sa/ping/RPC2",
+  "blogsearch.google.com.sg/ping/RPC2",
+  "blogsearch.google.com.tr/ping/RPC2",
+  "blogsearch.google.com.tw/ping/RPC2",
+  "blogsearch.google.com.ua/ping/RPC2",
+  "blogsearch.google.com.uy/ping/RPC2",
+  "blogsearch.google.com.vn/ping/RPC2",
+  "blogsearch.google.com/ping/RPC2",
+  "blogsearch.google.de/ping/RPC2",
+  "blogsearch.google.es/ping/RPC2",
+  "blogsearch.google.fi/ping/RPC2",
+  "blogsearch.google.fr/ping/RPC2",
+  "blogsearch.google.gr/ping/RPC2",
+  "blogsearch.google.hr/ping/RPC2",
+  "blogsearch.google.ie/ping/RPC2",
+  "blogsearch.google.it/ping/RPC2",
+  "blogsearch.google.jp/ping/RPC2",
+  "blogsearch.google.lt/ping/RPC2",
+  "blogsearch.google.nl/ping/RPC2",
+  "blogsearch.google.pl/ping/RPC2",
+  "blogsearch.google.pt/ping/RPC2",
+  "blogsearch.google.ro/ping/RPC2",
+  "blogsearch.google.ru/ping/RPC2",
+  "blogsearch.google.se/ping/RPC2",
+  "blogsearch.google.sk/ping/RPC2",
+  "blogsearch.google.us/ping/RPC2",
+  "blog.goo.ne.jp/XMLRPC",
+  "blogpeople.net/ping",
+  "ping.blo.gs/",
+  "ping.blogs.yandex.ru/RPC2",
+  "rpc.aitellu.com",
+  "rpc.bloggerei.de/ping/",
+  "rpc.pingomatic.com",
+  "rpc.reader.livedoor.com/ping",
+  "www.blogpeople.net/servlet/weblogUpdates",
+  "xping.pubsub.com/ping/"
+ );
+ function stopActions()
+ {
+  $("#checkBtn").removeClass("active");
+ }
+ 
+ function allowActions()
+ {
+  $("#checkBtn").addClass("active");
+ }
+ 
+ $("#checkBtn").click(function()
+ {
+  if ($(this).hasClass("active"))
+  {
+   
+   
+   var textarea = $("#urls").val();
+   var links = textarea.split("\n");
+   
+   linkArr = new Array();
+   $.each(links, function(index, value){
+    
+    if(validateURL(value) && jQuery.inArray(value, linkArr) < 0)
+    {
+     linkArr.push(value);
+    }
+   });
+   
+   if(linkArr.length < 1)
+   {
+    showModel("Error", "Please enter atleast 1 valid url where you want to verify link");
+    return false;
+   }
+   if(linkArr.length > 10)
+   {
+    showModel("Error", "No more than 30 webpages per search");
+    return false;
+   }
+   
+   var newVal = "";
+   newVal += linkArr[0];
+   for (i = 1; i < linkArr.length; i++) {
+    newVal += "\n"+linkArr[i];
+   }
+   
+   $("#urls").val(newVal);
+   
+   
+   
+   $(this).removeClass("active");
+   
+   
+   
+   $("#ressultSec").show();
+   $( "#resultsTable tbody" ).html("");
+   $.each(linkArr, function(index, value){
+    var html = '<tr><td>'+ value+ '</td>'
+     + '<td class="pingStatus"><div class="pingBox"></div></td> </tr>';
+    $( "#resultsTable tbody" ).append(html);
+   });
+   
+   var elemOff = $("#ressultSec").offset().top;
+   elemOff = elemOff-100;
+   $("html, body").animate({ scrollTop: elemOff }, 500);
+   pingLinks();
+   
+  }
+ });
+ 
+ function pingLinks()
+ {
+  var verifyingLink = $("#inputURL").val();
+  var tatal = linkArr.length;
+  var i = 0;
+  checkStatus(i);
+  function checkStatus(i)
+  {
+   linkno = i;
+   if(i >= tatal)
+   {
+    allowActions();
+    return false;
+   }
+   $( "#resultsTable" ).find( ".pingBox" ).eq( i ).html('<strong>Started pinging Url :</strong> '+ linkArr[i]);
+   $.ajax({
+    url : "https://www.prepostseo.com/ajax/getLinkMeta",
+    type:"post",
+    data: {url : linkArr[i]},
+    dataType:"json",
+    success: function(resp){
+     if(typeof resp.error != 'undefined')
+     {
+      $( "#resultsTable" ).find( ".pingStatus" ).eq( i ).html('<strong class="text-danger">'+resp.error+'</strong>');
+      i++;
+      checkStatus(i);
+     } else {
+      if(typeof resp.title != 'undefined')
+      {
+       title = resp.title;
+      }
+      category = $("#cat").val();
+      var j = 0;
+      ping(j);
+     }
+     
+     
+    }
+   });
+  }
+  
+  function ping(j)
+  {
+   if(j >= pingArr.length)
+   {
+    i++;
+    checkStatus(i);
+    return false;
+   }
+   
+   $.ajax({
+    url : "https://www.prepostseo.com/ajax/pingLink",
+    type:"post",
+    data: {url : linkArr[i], server : pingArr[j], title : title, cat : category},
+    dataType:"json",
+    success: function(pingResp){
+     if(typeof pingResp.error != 'undefined')
+     {
+      $( "#resultsTable" ).find( ".pingBox" ).eq( i ).append('<br><strong class="text-danger">'+pingResp.error+'</strong>');
+     } else {
+      $( "#resultsTable" ).find( ".pingBox" ).eq( i ).append('<br>'+pingArr[j]+' :: ' + '<strong class="text-success">Success</strong>');
+     }
+     
+     j++;
+     ping(j);
+    }
+   });
+  }
+  
+ }
+});
+
+</script>
+
+
+
+<script>
+function windowPopup(url, width, height) {
+  var left = (screen.width / 2) - (width / 2),
+      top = (screen.height / 2) - (height / 2);
+  window.open(
+    url,
+    "",
+    "menubar=no,toolbar=no,resizable=yes,scrollbars=yes,width=" + width + ",height=" + height + ",top=" + top + ",left=" + left
+  );
+}
+(function($) {
+  $('.js-share-btn').click(function(e) {
+    e.preventDefault();
+    var href = $(this).attr('href');
+    windowPopup(href, 550, 285);
+  });
+})(jQuery); 
+</script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script>
+ 
+ $(function () {
+    $('[data-toggle="tooltip"]').tooltip()
+ });
+ $(function() {  
+ 
+  jQuery.scrollSpeed(100, 800);
+ 
+ });
+ 
+</script>
+</body>
+</html>
